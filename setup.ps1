@@ -6,16 +6,9 @@
 # Arrêter en cas d’erreur
 $ErrorActionPreference = "Stop"
 
-conda deactivate
-conda env remove --name FinTech_RL
-conda create --name FinTech_RL python=3.12
-conda activate FinTech_RL
-
-python.exe -m pip install --upgrade pip
-
-Write-Host "Installation des dépendances Python..."
-
-conda env update --file=environment.yml
+conda env create -f environment.yml
+conda activate MyGreenBook
 pip install -r requirements.txt
+
 
 Write-Host "Setup termine avec succes."
